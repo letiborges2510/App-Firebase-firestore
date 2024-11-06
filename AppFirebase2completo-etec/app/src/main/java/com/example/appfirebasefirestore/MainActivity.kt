@@ -9,12 +9,15 @@ import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -94,6 +97,14 @@ fun App(db: FirebaseFirestore) {
                         color = Color(0xFFE91E63) // Rosa
                     )
                 }
+
+                Image(
+                    painter = painterResource(id = R.drawable.app_firebase), // Usando a imagem no drawable
+                    contentDescription = "Logo do App",
+                    modifier = Modifier
+                        .align(Alignment.CenterHorizontally)
+                        .height(150.dp) // Ajuste a altura da imagem conforme necessário
+                )
 
                 // Formulário de Cadastro
                 Column(
@@ -199,3 +210,4 @@ fun App(db: FirebaseFirestore) {
         }
     }
 }
+
